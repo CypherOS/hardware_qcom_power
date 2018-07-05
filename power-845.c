@@ -185,7 +185,7 @@ static int process_video_encode_hint(void *metadata)
     return HINT_NONE;
 }
 
-int power_hint_override(power_hint_t hint, void *UNUSED(data))
+int power_hint_override(power_hint_t hint, void *data)
 {
     int ret_val = HINT_NONE;
     switch (hint) {
@@ -205,7 +205,7 @@ int power_hint_override(power_hint_t hint, void *UNUSED(data))
             interaction(duration, ARRAY_SIZE(resources), resources);
             ret_val = HINT_HANDLED;
         }
-        break;
+            break;
         default:
             break;
     }
