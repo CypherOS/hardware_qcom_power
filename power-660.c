@@ -58,13 +58,6 @@ const int kMinInteractiveDuration = 400; /* ms */
 
 static int video_encode_hint_sent;
 
-#ifdef INTERACTION_BOOST
-int get_number_of_profiles()
-{
-    return 0;
-}
-#endif
-
 /**
  * Returns true if the target is SDM630.
  */

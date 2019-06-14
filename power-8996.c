@@ -56,13 +56,6 @@ const int kMaxLaunchDuration = 5000; /* ms */
 const int kMaxInteractiveDuration = 5000; /* ms */
 const int kMinInteractiveDuration = 500; /* ms */
 
-#ifdef INTERACTION_BOOST
-int get_number_of_profiles()
-{
-    return 0;
-}
-#endif
-
 typedef enum {
     NORMAL_MODE       = 0,
     SUSTAINED_MODE    = 1,

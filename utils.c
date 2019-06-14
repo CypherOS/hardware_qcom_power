@@ -233,10 +233,6 @@ int is_ondemand_governor(char* governor) {
    return 0;
 }
 
-#ifndef INTERACTION_BOOST
-void interaction(int UNUSED(duration), int UNUSED(num_args), int UNUSED(opt_list[]))
-{
-#else
 void interaction(int duration, int num_args, int opt_list[])
 {
     static int lock_handle = 0;
@@ -251,14 +247,8 @@ void interaction(int duration, int num_args, int opt_list[])
                 ALOGE("Failed to acquire lock.");
         }
     }
-#endif
 }
 
-#ifndef INTERACTION_BOOST
-int interaction_with_handle(int UNUSED(lock_handle), int UNUSED(duration), int UNUSED(num_args), int UNUSED(opt_list[]))
-{
-    return 0;
-#else
 int interaction_with_handle(int lock_handle, int duration, int num_args, int opt_list[])
 {
     if (duration < 0 || num_args < 1 || opt_list[0] == 0)
@@ -272,7 +262,6 @@ int interaction_with_handle(int lock_handle, int duration, int num_args, int opt
         }
     }
     return lock_handle;
-#endif
 }
 
 //this is interaction_with_handle using perf_hint instead of

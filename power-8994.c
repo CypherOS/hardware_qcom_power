@@ -50,13 +50,6 @@
 #include "performance.h"
 #include "power-common.h"
 
-#ifdef INTERACTION_BOOST
-int get_number_of_profiles()
-{
-    return 0;
-}
-#endif
-
 static void process_video_encode_hint(void *metadata)
 {
     char governor[80];
